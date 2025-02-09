@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'about',
+    'webapp'
 ]
 
 MIDDLEWARE = [
@@ -72,16 +74,20 @@ WSGI_APPLICATION = 'myresume.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'myresume',
-        'HOST': '172.18.0.2',
-        'USER': 'root',
-        'PASSWORD':'example'    
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydatabase',
+        'USER': 'myuser',
+        'PASSWORD': 'mypassword',
+        'HOST': '172.18.0.2',  # Use the service name from docker-compose.yml
+        'PORT': '5432',
     }
 }
+
+
+
+
 
 
 # Password validation
@@ -120,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = 'assets/'
 
-STATIC_ROOT = ""
+STATIC_ROOT = ""    
 
 STATICFILES_DIRS = (
     BASE_DIR / 'assets',
