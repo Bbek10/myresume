@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'mydatabase',
         'USER': 'myuser',
         'PASSWORD': 'mypassword',
-        'HOST': '172.18.0.2',  # Use the service name from docker-compose.yml
+        'HOST': 'localhost',  # Use the service name from docker-compose.yml
         'PORT': '5432',
     }
 }
