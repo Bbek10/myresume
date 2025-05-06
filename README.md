@@ -2,13 +2,13 @@
 
 ## Environments
 * Dev URL:  https://impcaredev.wpengine.com/  
-* Stage URL: 
+* Stage URL:https://impcarestage.wpengine.com/ 
 * Prod URL: https://imperativecare.com/
 
 ## Prerequisites
 
-* Wordpress >= 5.4
-* PHP >=7.3 (with php-mbstring enabled)
+* Wordpress >= 6.8
+* PHP >= 7.4.30 (with php-mbstring enabled)
 * Composer
 * Node.js version: >= 12.0.0 (we are currently using 14.\* lts)
 * Yarn: Package manager
@@ -49,7 +49,7 @@
 * Need to create an empty cache folder inside uploads folder if issue of Acorn arises.
 
 ## Regular Tests to be carried out
-* Regression testing should be performed in the whole website
+* Regression testingnd it to me asap. should be performed in the whole website
 * Sanity test the CMS
 * Test Contact forms
 * Edit / create pages and perform regression testing
@@ -57,3 +57,12 @@
 * check for robot.txt and sitemap.xml
 * Test User enumeration
 * When you post the website on LinkedIn, the OG image and OG title are not the same as what you post on Facebook. It should be the same as OG image and OG Title for Facebook.
+
+## Backups 
+* WP Engine performs automated daily backups
+* Up to 40 backup points are available in the User Portal
+* We have triggered a manual backup for the current stable version.
+
+    Backup Info,Description,ID,Latest Backup
+    April Maintenance -- created by: sujan@mediacause.org,1745216483,Apr 21, 2025, 12:07 PM
+
