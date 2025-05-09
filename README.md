@@ -8,12 +8,12 @@ A custom WordPress multisite implementation for Imperative Care, built using mod
 - [Project Setup](#project-setup)
 - [Maintenance Tasks](#maintenance-tasks)
 - [Regular Testing](#regular-testing)
-- [Backups](#backups)
+
 
 
 ## Environments
-- Dev URL:  https://impcaredev.wpengine.com/  
-- Stage URL:https://impcarestage.wpengine.com/ 
+- Dev
+- Stage
 - Prod URL: https://imperativecare.com/
 
 ## Prerequisites
@@ -39,7 +39,7 @@ A custom WordPress multisite implementation for Imperative Care, built using mod
 5. Use the correct Node version:
    ```bash
    nvm use 14
-- user update
+
 - Install dependencies
 -    yarn
 -    yarn build
@@ -71,13 +71,3 @@ A custom WordPress multisite implementation for Imperative Care, built using mod
 - Verify robots.txt and sitemap.xml
 - Run user enumeration security tests
 - When you post the website on LinkedIn, the OG image and OG title are not the same as what you post on Facebook. It should be the same as OG image and OG Title for Facebook.
-
-## Backups
-
-- WP Engine provides automated daily backups
-- Up to 40 backup points available in the User Portal
-- Manual backups are triggered before major updates or deployments
-
-| Description       | Created By                 | ID         | Latest Backup        |
-|-------------------|----------------------------|------------|----------------------|
-| April Maintenance | sujan@mediacause.org       | 1745216483 | Apr 21, 2025, 12:07 PM |
