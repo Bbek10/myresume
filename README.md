@@ -1,68 +1,83 @@
 # Imperative Care
+A custom WordPress multisite implementation for Imperative Care, built using modern development practices and deployed on WP Engine.
+
+## Table of Contents
+- [Environments](#environments)
+- [Prerequisites](#prerequisites)
+- [Server](#server)
+- [Project Setup](#project-setup)
+- [Maintenance Tasks](#maintenance-tasks)
+- [Regular Testing](#regular-testing)
+- [Backups](#backups)
+
 
 ## Environments
-* Dev URL:  https://impcaredev.wpengine.com/  
-* Stage URL:https://impcarestage.wpengine.com/ 
-* Prod URL: https://imperativecare.com/
+- Dev URL:  https://impcaredev.wpengine.com/  
+- Stage URL:https://impcarestage.wpengine.com/ 
+- Prod URL: https://imperativecare.com/
 
 ## Prerequisites
 
-* Wordpress >= 6.8
-* PHP >= 7.4.30 (with php-mbstring enabled)
-* Composer
-* Node.js version: >= 12.0.0 (we are currently using 14.\* lts)
-* Yarn: Package manager
+- Wordpress >= 6.8
+- PHP >= 7.4.30 (with php-mbstring enabled)
+- Composer
+- Node.js version: >= 12.0.0 (we are currently using 14.\* lts)
+- Yarn: Package manager
 
-## SERVER
+## Server
 
 - WP Engine
 
-## Project Setup Process
-* Clone files from remote repository
-* Import db
-* wp_option >> local site URL (but no '/' at the end)
-    all wp_option (there are wp_option2, wp_option3, wp_option4,.....)
-* wp_site (just keep domain name "impcare.local")
-    [note: impcare.local should be replaced with your site domain]
-* wp_blogs (replace site URL with "impcare.local")
-    [note: impcare.local should be replaced with your site domain]
-* user update
-* nvm use 14
-* yarn
-* yarn build
-* make a "cache" folder wp-content >> uploads >> under sites >> 3
-* make a "cache" folder wp-content >> uploads >> under sites >> 4
-* make a "cache" folder wp-content >> uploads >> under sites >> 5
+## Project Setup 
+1. Clone files from remote repository
+2. Import the database
+3. Update the following database tables:
+   - `wp_options` → Update local site URL (no trailing slash - '/' at the end))
+   - `wp_site` → Replace domain with `impcare.local` (or your local domain)
+   - `wp_blogs` → Replace site URL with `impcare.local`
+4. Update user records if necessary
+5. Use the correct Node version:
+   ```bash
+   nvm use 14
+- user update
+- Install dependencies
+-    yarn
+-    yarn build
+
+- Create cache folders under:
+    - make a "cache" folder wp-content >> uploads >> under sites >> 3
+    - make a "cache" folder wp-content >> uploads >> under sites >> 4
+    - make a "cache" folder wp-content >> uploads >> under sites >> 5
     
     
-## Regular Maintainenance Tasks
-* Plugins updates
-* PHP update
-* WP core update
-* Any security update
-* Security audit using https://sitecheck.sucuri.net/ 
-* Any minor fixes introduced by update* s
-* Update backend credentials for Admin Console every three months. Only update credentials for the Outside user (this could be sujan@ruca.co, sujan@outside.tech, etc.)
-* Add ACF license key in all environments if not present
-* HTTP to HTTPS redirection check
-* Check for robot.txt and sitemap.xml
-* Need to create an empty cache folder inside uploads folder if issue of Acorn arises.
+##  Maintenance Tasks
+- Update plugins, PHP version, and WordPress core
+- Perform regular security audits ([Sucuri SiteCheck](https://sitecheck.sucuri.net/))
+- Apply any necessary security patches or fixes
+- Update backend credentials for Admin Console every three months.
+- Add ACF license key in all environments if not present
+- Confirm HTTP to HTTPS redirection is functioning
+- Validate presence of `robots.txt` and `sitemap.xml`
+- Recreate empty cache folders if Acorn-related errors occur
 
-## Regular Tests to be carried out
-* Regression testingnd it to me asap. should be performed in the whole website
-* Sanity test the CMS
-* Test Contact forms
-* Edit / create pages and perform regression testing
-* HTTP to HTTPS redirection check
-* check for robot.txt and sitemap.xml
-* Test User enumeration
-* When you post the website on LinkedIn, the OG image and OG title are not the same as what you post on Facebook. It should be the same as OG image and OG Title for Facebook.
+## Regular Testing
 
-## Backups 
-* WP Engine performs automated daily backups
-* Up to 40 backup points are available in the User Portal
-* We have triggered a manual backup for the current stable version.
+- Full regression testing across the website
+- CMS sanity checks
+- Test all contact forms
+- Verify ability to create/edit pages
+- Confirm consistent OG image and title across platforms (LinkedIn, Facebook)
+- Test HTTP to HTTPS redirection
+- Verify robots.txt and sitemap.xml
+- Run user enumeration security tests
+- When you post the website on LinkedIn, the OG image and OG title are not the same as what you post on Facebook. It should be the same as OG image and OG Title for Facebook.
 
-    Backup Info,Description,ID,Latest Backup
-    April Maintenance -- created by: sujan@mediacause.org,1745216483,Apr 21, 2025, 12:07 PM
+## Backups
 
+- WP Engine provides automated daily backups
+- Up to 40 backup points available in the User Portal
+- Manual backups are triggered before major updates or deployments
+
+| Description       | Created By                 | ID         | Latest Backup        |
+|-------------------|----------------------------|------------|----------------------|
+| April Maintenance | sujan@mediacause.org       | 1745216483 | Apr 21, 2025, 12:07 PM |
