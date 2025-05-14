@@ -1,5 +1,25 @@
-# Imperative Care
-A custom WordPress multisite implementation for Imperative Care, built using modern development practices and deployed on WP Engine.
+# Imperative Care Multi-Site WordPress Project
+
+## Overview
+A custom built WordPress multisite for Imperative Care, built using modern development practices and deployed on WP Engine. Which uses IC theme as a primary theme. The project is structured to handle multiple WordPress sites within a single installation.
+
+
+## Theme Information
+The project uses a custom theme (IC) built on top of Sage, which includes:
+
+
+### Dependencies
+- Node.js packages:
+  - Bootstrap 4.5.2
+  - jQuery 3.5.1
+  - Laravel Mix for asset compilation
+  - Various UI components (Fancybox, AOS, Bootstrap Select)
+  - Development tools (ESLint, Stylelint)
+
+### Development Requirements
+- PHP 7.2.5 or higher
+- Node.js for frontend asset compilation ( version: >= 12.0.0 (we are currently using 14.\* lts))
+- Composer for PHP dependencies
 
 ## Table of Contents
 - [Environments](#environments)
@@ -8,6 +28,7 @@ A custom WordPress multisite implementation for Imperative Care, built using mod
 - [Project Setup](#project-setup)
 - [Maintenance Tasks](#maintenance-tasks)
 - [Regular Testing](#regular-testing)
+- [Theme Development](#theme-development)
 
 
 
@@ -20,29 +41,37 @@ A custom WordPress multisite implementation for Imperative Care, built using mod
 
 - Wordpress >= 6.8
 - PHP >= 7.4.30 (with php-mbstring enabled)
-- Composer
-- Node.js version: >= 12.0.0 (we are currently using 14.\* lts)
 - Yarn: Package manager
 
 ## Server
 
 - WP Engine
 
+
+
 ## Project Setup 
 1. Clone files from remote repository
 2. Import the database
-3. Update the following database tables:
-   - `wp_options` → Update local site URL (no trailing slash - '/' at the end))
+3.  Download the Uploads folder and place it in the wp-content folder
+4. Update the following database tables:
+   - `wp_options` → Update local site URL (no trailing slash - '/' at the end)
    - `wp_site` → Replace domain with `impcare.local` (or your local domain)
    - `wp_blogs` → Replace site URL with `impcare.local`
-4. Update user records if necessary
-5. Use the correct Node version:
+5. Update user records if necessary
+6. Use the correct Node version:
    ```bash
    nvm use 14
 
-- Install dependencies
+## Theme Development
+- Go to the theme directory
+-    cd wp-content/themes/ic
+- Install PHP dependencies
+-    composer install
+- Install other dependencies
 -    yarn
+- Building assets like Javascript and CSS
 -    yarn build
+- Cache
 
 - Create cache folders under:
     - make a "cache" folder wp-content >> uploads >> under sites >> 3
@@ -60,14 +89,3 @@ A custom WordPress multisite implementation for Imperative Care, built using mod
 - Validate presence of `robots.txt` and `sitemap.xml`
 - Recreate empty cache folders if Acorn-related errors occur
 
-## Regular Testing
-
-- Full regression testing across the website
-- CMS sanity checks
-- Test all contact forms
-- Verify ability to create/edit pages
-- Confirm consistent OG image and title across platforms (LinkedIn, Facebook)
-- Test HTTP to HTTPS redirection
-- Verify robots.txt and sitemap.xml
-- Run user enumeration security tests
-- When you post the website on LinkedIn, the OG image and OG title are not the same as what you post on Facebook. It should be the same as OG image and OG Title for Facebook.
