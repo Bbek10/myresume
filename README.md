@@ -62,13 +62,13 @@ The project uses a custom theme (Imperative Care Theme) built on top of Sage, wh
 
 ## Theme Development
 - Go to the theme directory 
-`cd wp-content/themes/ic`
+cd wp-content/themes/ic
 - Install PHP dependencies
-`composer install`
+composer install
 - Install other dependencies
-`yarn`
+yarn
 - Building assets like Javascript and CSS
-`yarn build`
+yarn build
 - Create cache folders under:
     - make a "cache" folder wp-content >> uploads >> under sites >> 3
     - make a "cache" folder wp-content >> uploads >> under sites >> 4
