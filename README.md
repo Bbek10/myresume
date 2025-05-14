@@ -1,11 +1,13 @@
 # Imperative Care Multi-Site WordPress Project
 
 ## Overview
-A custom built WordPress multisite for Imperative Care, built using modern development practices and deployed on WP Engine. Which uses IC theme as a primary theme. The project is structured to handle multiple WordPress sites within a single installation.
+A custom built WordPress multisite for Imperative Care, built using modern development practices and deployed on WP Engine which uses IC theme as a primary theme. The project is structured to handle multiple WordPress sites within a single installation.
 
 
 ## Theme Information
-The project uses a custom theme (IC) built on top of Sage, which includes:
+The project uses a custom theme (Imperative Care Theme) built on top of Sage, which includes:
+- Genesis Block Theme
+- Imperative Care Theme
 
 
 ### Dependencies
@@ -59,13 +61,14 @@ The project uses a custom theme (IC) built on top of Sage, which includes:
    nvm use 14
 
 ## Theme Development
-- Go to the theme directory `cd wp-content/themes/ic`
+- Go to the theme directory 
+`cd wp-content/themes/ic`
 - Install PHP dependencies
-   - `composer install`
+`composer install`
 - Install other dependencies
-   - `yarn`
+`yarn`
 - Building assets like Javascript and CSS
-   - `yarn build`
+`yarn build`
 - Create cache folders under:
     - make a "cache" folder wp-content >> uploads >> under sites >> 3
     - make a "cache" folder wp-content >> uploads >> under sites >> 4
