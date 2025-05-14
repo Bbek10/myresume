@@ -16,11 +16,6 @@ The project uses a custom theme (IC) built on top of Sage, which includes:
   - Various UI components (Fancybox, AOS, Bootstrap Select)
   - Development tools (ESLint, Stylelint)
 
-### Development Requirements
-- PHP 7.2.5 or higher
-- Node.js for frontend asset compilation ( version: >= 12.0.0 (we are currently using 14.\* lts))
-- Composer for PHP dependencies
-
 ## Table of Contents
 - [Environments](#environments)
 - [Prerequisites](#prerequisites)
@@ -38,11 +33,12 @@ The project uses a custom theme (IC) built on top of Sage, which includes:
 - Prod URL: https://imperativecare.com/
 
 ## Prerequisites
-
+- PHP 7.2.5 or higher (curerently using PHP 7.4.30)
+- Node.js for frontend asset compilation ( version: >= 12.0.0 (we are currently using 14.\* lts))
+- Composer for PHP dependencies
 - Wordpress >= 6.8
 - PHP >= 7.4.30 (with php-mbstring enabled)
 - Yarn: Package manager
-
 ## Server
 
 - WP Engine
@@ -63,16 +59,13 @@ The project uses a custom theme (IC) built on top of Sage, which includes:
    nvm use 14
 
 ## Theme Development
-- Go to the theme directory
--    cd wp-content/themes/ic
+- Go to the theme directory `cd wp-content/themes/ic`
 - Install PHP dependencies
--    composer install
+   - `composer install`
 - Install other dependencies
--    yarn
+   - `yarn`
 - Building assets like Javascript and CSS
--    yarn build
-- Cache
-
+   - `yarn build`
 - Create cache folders under:
     - make a "cache" folder wp-content >> uploads >> under sites >> 3
     - make a "cache" folder wp-content >> uploads >> under sites >> 4
